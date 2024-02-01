@@ -2,20 +2,19 @@ import {Realm} from '@realm/react';
 import { ObjectSchema } from 'realm';
 
 class User extends Realm.Object {
-    public static schema: ObjectSchema = {
+    public static schema = {
         name: 'User',
         properties: {
-            _id: 'objectId',
+            id: 'string',
             userName: 'string',
             lastLoggedInDate: 'date',
         },
-        primaryKey: '_id',
-    }
-
-    public _id!: Object
-    public userName!: string
-    public lastLoggedInDate!: Date
-   
+        primaryKey: 'id',
+    }   
+    
+    id!: string;
+  userName!: string;
+  lastLoggedInDate!: Date;
 }
 
 export default User;

@@ -1,31 +1,31 @@
 import { Realm } from '@realm/react';
-import { ObjectSchema } from 'realm';
+import { User } from 'realm';
 
 class TodoTask extends Realm.Object {
-  public static schema: ObjectSchema = {
+  public static schema = {
     name: 'TodoTask',
     properties: {
-      _id: 'objectId',
+      _id: 'string',
       title: 'string',
       description: 'string',
-      isDone: 'bool',
+      status: 'string',
+      userId: 'User',
       startDate: 'date',
       dueDate: 'date',
       createdate: 'date',
       updatedate: 'date',
     },
     primaryKey: '_id',
-  };
-
-  // Properties
-  public _id!: Object;
-  public title!: string;
-  public description!: string;
-  public isDone!: boolean;
-  public startDate!: Date;
-  public dueDate!: Date;
-  public createdate!: Date;
-  public updatedate!: Date;
+  }   
+  _id!: string;
+  title!: string;
+  description!: string;
+  status!: string;
+  userId!: User;
+  startDate!: Date;
+  dueDate!: Date;
+  createdate!: Date;
+  updatedate!: Date;
 }
 
 export default TodoTask;
